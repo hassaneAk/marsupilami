@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %} 
+{% block stylesheets %} 
+   <style> 
+      .table { border-collapse: collapse; } 
+      .table th, td { 
+         border-bottom: 1px solid #ddd; 
+         width: 250px; 
+         text-align: left; 
+         align: left; 
+      } 
+   </style> 
+{% endblock %}  
+{% block body %} 
+   <h2>Bienvenue ! Voici la liste de tes amis </h2> 
+   <div> 
+      <a href = "{{ path('app_book_new') }}">Ajouter</a> 
+   </div> 
+   <th></th> 
+   <th></th>
+   <table class = "table">  
+      <tr>  
+         <th>race</th>  
+         <th>nourriture</th>  
+         <th>famille</th> 
+         <th>age</th> 
+         <th></th> 
+         <th></th>
+      </tr>  
+      {% for x in data %} 
+      <tr>  
+         <td>{{ x.Race }}</td>   
+         <td>{{ x.Nourriture }}</td>   
+         <td>{{ x.Famille }}</td>  
+         <td>{{ x.Age }}</td>   
+
+         <td><a href = "{{ path('app_book_update', { 'id' : x.Id }) }}">Modifier</a></td>
+         <td><a href = "{{ path('app_book_delete', { 'id' : x.Id }) }}">Supprimer</a></td>
+      </tr>  
+      {% endfor %} 
+   </table>  
+   
+{% endblock %}  

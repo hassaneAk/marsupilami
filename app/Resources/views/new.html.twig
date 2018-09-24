@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %} 
+{% block stylesheets %} 
+
+   <style> 
+      #simpleform { 
+         width:600px; 
+         border:2px solid grey; 
+         padding:14px; 
+      } 
+      #simpleform label { 
+         font-size:14px; 
+         float:left; 
+         width:300px; 
+         text-align:right; 
+         display:block; 
+      } 
+      #simpleform span { 
+         font-size:11px; 
+         color:grey;
+         width:100px; 
+         text-align:right; 
+         display:block; 
+      }  
+      #simpleform input { 
+         border:1px solid grey; 
+         font-family:verdana; 
+         font-size:14px; 
+         color:light blue; 
+         height:24px; 
+         width:250px; 
+         margin: 0 0 10px 10px; 
+      }  
+      #simpleform textarea { 
+         border:1px solid grey; 
+         font-family:verdana; 
+         font-size:14px; 
+         color:light blue; 
+         height:120px; 
+         width:250px; 
+         margin: 0 0 20px 10px; 
+      }  
+      #simpleform select { 
+         margin: 0 0 20px 10px; 
+      } 
+      #simpleform button { 
+         clear:both; 
+         margin-left:250px; 
+         background: grey;
+         color:#FFFFFF; 
+         border:solid 1px #666666; 
+         font-size:16px; 
+      } 
+   </style> 
+{% endblock %}  
+
+{% block body %} 
+   <h3>Insérez les informations de vos amis : </h3> 
+   <div id = "simpleform"> 
+      {{ form_start(form) }} 
+      {{ form_widget(form) }} 
+      {{ form_end(form) }} 
+   </div> 
+<img src="http://www.programme.tv/media/cache/relative_max_355x272/upload/epgs/2013/01/les-aventures-du-marsupilami_202721_1.jpg"
+{% endblock %} 
